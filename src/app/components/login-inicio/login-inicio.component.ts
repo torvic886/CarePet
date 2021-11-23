@@ -13,6 +13,7 @@ import { ErrorService } from 'src/app/services/error.service';
 export class LoginInicioComponent implements OnInit {
   loginInicioForm: FormGroup;
   loading = false;
+  titulo = 'Agregar Empleado';
   constructor(private fb: FormBuilder,
     private afAuth: AngularFireAuth,
     private _errorService: ErrorService,
@@ -30,25 +31,30 @@ export class LoginInicioComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login() {
+  login() 
+  {
     console.log(this.loginInicioForm)
     const usuario = this.loginInicioForm.get('usuario')?.value;
     const password = this.loginInicioForm.get('password')?.value;
 
     this.loading = true;
 
-    this.afAuth.signInWithEmailAndPassword(usuario, password).then((respuesta) => {
+    this.afAuth.signInWithEmailAndPassword(usuario, password).then((respuesta) => 
+    {
       console.log(respuesta);
 
-      if (respuesta.user?.emailVerified == false) {
+      if (respuesta.user?.emailVerified == false) 
+      {
         this.router.navigate(['/verificarCorreo'])
       }
-      else {
+      else 
+      {
 
       }
 
       this.loading = false;
-    }, error => {
+    }, error => 
+    {
       this.loading = false;
       console.log(error)
       this.toastr.error(this._errorService.error(error.code), 'Error')
@@ -56,6 +62,40 @@ export class LoginInicioComponent implements OnInit {
 
     }
     )
+  }
+
+  login2()
+  {
+
+    const usuario = this.loginInicioForm.get('usuario')?.value;
+    const password = this.loginInicioForm.get('password')?.value;
+
+    this.loading = true;
+
+    this.afAuth.signInWithEmailAndPassword(usuario, password).then((respuesta) => 
+    {
+
+      if (respuesta.user?.emailVerified == false) 
+      {
+        
+        this.router.navigate(['/catalogo-producto'])
+      }
+      else 
+      {
+
+      }
+
+      this.loading = false;
+    }, error => 
+    {
+      this.loading = false;
+      console.log(error)
+      this.toastr.error(this._errorService.error(error.code), 'Error')
+      this.loginInicioForm.reset();
+
+    }
+    )
+
   }
 
 }
