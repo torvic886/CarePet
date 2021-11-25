@@ -71,8 +71,10 @@ export class CreateEmpleadoComponent implements OnInit
       fechaActualizacion: new Date()
     }
     this.loading = true;
-    this.empleadoService.agregarEmpleado(empleado).then(() => {
-      this.toastr.success('El empleado se registro con exito!', 'Empleado Registrado', { positionClass: 'toast-bottom-right' });
+    this.empleadoService.agregarEmpleado(empleado).then(() => 
+    {
+      this.toastr.success('El empleado se registro con exito!', 'Empleado Registrado', 
+      { positionClass: 'toast-bottom-right' });
       this.loading = false;
       this.router.navigate(['/list-empleado']);
 

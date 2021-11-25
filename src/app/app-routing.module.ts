@@ -11,6 +11,7 @@ import { VerificarCorreoComponent } from './components/verificar-correo/verifica
 import { RegisterUserComponent } from './components/register-user/register-user.component';
 import { CreateClienteComponent } from './components/create-cliente/create-cliente.component';
 import { AdministracionComponent } from './components/administracion/administracion.component';
+import { ListClienteComponent } from './components/list-cliente/list-cliente.component';
 
 
 
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'catalogo-producto', pathMatch: 'full' },
   {path: 'administracion',component: AdministracionComponent},
   { path: 'list-empleado', component: ListEmpleadoComponent },
+  {path: 'list-cliente', component: ListClienteComponent},
   { path: 'create-empleado', component: CreateEmpleadoComponent },
   { path: 'create-cliente', component: CreateClienteComponent },
   { path: 'catalogo-producto', component: CatalogoProductoComponent },
@@ -30,6 +32,7 @@ const routes: Routes = [
   { path: 'verificarCorreo', component: VerificarCorreoComponent },
   { path: 'verificar-password', component: VerificarPasswordComponent },
   { path: 'editEmpleado/:id', component: CreateEmpleadoComponent },
+  {path: 'editCliente/:id', component: CreateClienteComponent},
   { path: '', redirectTo: 'list-empleado', pathMatch: 'full' },
   { path: '**', redirectTo: 'list-empleado', pathMatch: 'full' }
 ];

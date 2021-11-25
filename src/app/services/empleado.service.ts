@@ -14,7 +14,8 @@ export class EmpleadoService
   {
     return this.firestore.collection('empleados').add(empleado);
   }
-  getEmpleado(): Observable<any> {
+  getEmpleado(): Observable<any> 
+  {
     return this.firestore.collection('empleados', ref => ref.orderBy('fechaCreacion','asc')).snapshotChanges();
   }
 
@@ -29,6 +30,28 @@ export class EmpleadoService
   actualizarEmpleado(id: string, data:any): Promise<any>
   {
     return this.firestore.collection('empleados').doc(id).update(data);
+  }
+// Crud Cliente
+  agregarCliente(cliente: any): Promise<any>
+  {
+    return this.firestore.collection('clientes').add(cliente);
+  }
+  getCliente(): Observable<any> 
+  {
+    return this.firestore.collection('clientes', ref => ref.orderBy('fechaCreacion','asc')).snapshotChanges();
+  }
+
+  eliminarCliente(id: string): Promise <any> 
+  {
+    return this.firestore.collection('clientes').doc(id).delete();
+  }
+  getCliente_(id: string): Observable<any>
+  {
+    return this.firestore.collection('clientes').doc(id).snapshotChanges();
+  }
+  actualizarCliente(id: string, data:any): Promise<any>
+  {
+    return this.firestore.collection('clientes').doc(id).update(data);
   }
 
 }
