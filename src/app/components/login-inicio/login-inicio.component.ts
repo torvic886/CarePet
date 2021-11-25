@@ -18,8 +18,7 @@ export class LoginInicioComponent implements OnInit {
     private afAuth: AngularFireAuth,
     private _errorService: ErrorService,
     private toastr: ToastrService,
-    private router: Router) 
-  {
+    private router: Router) {
     this.loginInicioForm =
       this.fb.group
         ({
@@ -31,30 +30,34 @@ export class LoginInicioComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login() 
-  {
+  login() {
     console.log(this.loginInicioForm)
     const usuario = this.loginInicioForm.get('usuario')?.value;
     const password = this.loginInicioForm.get('password')?.value;
 
     this.loading = true;
 
-    this.afAuth.signInWithEmailAndPassword(usuario, password).then((respuesta) => 
-    {
-      console.log(respuesta);
+    this.afAuth.signInWithEmailAndPassword(usuario, password).then((respuesta) => {
+      console.log("usuario: " + usuario);
+
+      if (usuario == 'vagutierrezv@uqvirtual.edu.co') 
+      {
+        this.router.navigate(['/administracion'])
+        console.log('ENTRAAA')
+      }
 
       if (respuesta.user?.emailVerified == false) 
       {
         this.router.navigate(['/verificarCorreo'])
       }
-      else 
+      if (usuario != 'vagutierrezv@uqvirtual.edu.co') 
       {
-
+        this.router.navigate(['/catalogo-producto'])
+        console.log('ENTRAAA')
       }
-
+      
       this.loading = false;
-    }, error => 
-    {
+    }, error => {
       this.loading = false;
       console.log(error)
       this.toastr.error(this._errorService.error(error.code), 'Error')
@@ -64,30 +67,33 @@ export class LoginInicioComponent implements OnInit {
     )
   }
 
-  login2()
-  {
+  login2() {
 
     const usuario = this.loginInicioForm.get('usuario')?.value;
     const password = this.loginInicioForm.get('password')?.value;
 
     this.loading = true;
 
-    this.afAuth.signInWithEmailAndPassword(usuario, password).then((respuesta) => 
-    {
 
-      if (respuesta.user?.emailVerified == false) 
-      {
-        
+
+    this.afAuth.signInWithEmailAndPassword(usuario, password).then((respuesta) => {
+      console.log(respuesta.user?.displayName);
+
+      /*   if(respuesta.user?.displayName == "vagutierrezv@uqvirtual.edu.co")
+         {
+           this.router.navigate(['/list-empleado'])
+         } */
+
+      if (respuesta.user?.emailVerified == false) {
         this.router.navigate(['/catalogo-producto'])
       }
-      else 
-      {
+
+      else {
 
       }
 
       this.loading = false;
-    }, error => 
-    {
+    }, error => {
       this.loading = false;
       console.log(error)
       this.toastr.error(this._errorService.error(error.code), 'Error')

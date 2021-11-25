@@ -34,6 +34,8 @@ import { CreateClienteComponent } from './components/create-cliente/create-clien
 import { LoginInicioComponent } from './components/login-inicio/login-inicio.component';
 import { VerificarCorreoComponent } from './components/verificar-correo/verificar-correo.component';
 import { RegisterUserComponent } from './components/register-user/register-user.component';
+import { AdministracionComponent } from './components/administracion/administracion.component';
+import { Navbar2Component } from './components/navbar2/navbar2.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,10 @@ import { RegisterUserComponent } from './components/register-user/register-user.
     CreateClienteComponent,
     LoginInicioComponent,
     VerificarCorreoComponent,
-    RegisterUserComponent
+    RegisterUserComponent,
+    AdministracionComponent,
+    Navbar2Component,
+    
   ],
   imports: [
     BrowserModule,

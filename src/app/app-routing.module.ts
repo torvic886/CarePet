@@ -10,12 +10,15 @@ import { LoginInicioComponent } from './components/login-inicio/login-inicio.com
 import { VerificarCorreoComponent } from './components/verificar-correo/verificar-correo.component';
 import { RegisterUserComponent } from './components/register-user/register-user.component';
 import { CreateClienteComponent } from './components/create-cliente/create-cliente.component';
+import { AdministracionComponent } from './components/administracion/administracion.component';
+
 
 
 const routes: Routes = [
   
   {path: '', component: CatalogoProductoComponent },
   { path: '', redirectTo: 'catalogo-producto', pathMatch: 'full' },
+  {path: 'administracion',component: AdministracionComponent},
   { path: 'list-empleado', component: ListEmpleadoComponent },
   { path: 'create-empleado', component: CreateEmpleadoComponent },
   { path: 'create-cliente', component: CreateClienteComponent },

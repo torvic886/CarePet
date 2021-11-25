@@ -9,7 +9,8 @@ import { EmpleadoService } from 'src/app/services/empleado.service';
   templateUrl: './list-empleado.component.html',
   styleUrls: ['./list-empleado.component.css']
 })
-export class ListEmpleadoComponent implements OnInit {
+export class ListEmpleadoComponent implements OnInit 
+{
   empleados: any[] = [];
   constructor(private _empleadoService: EmpleadoService,
     private toastr: ToastrService) 
