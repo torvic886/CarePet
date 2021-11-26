@@ -36,6 +36,10 @@ import { VerificarCorreoComponent } from './components/verificar-correo/verifica
 import { RegisterUserComponent } from './components/register-user/register-user.component';
 import { AdministracionComponent } from './components/administracion/administracion.component';
 import { Navbar2Component } from './components/navbar2/navbar2.component';
+import { CreateMascotaComponent } from './components/create-mascota/create-mascota.component';
+import { ListMascotaComponent } from './components/list-mascota/list-mascota.component';
+import { CreateProductoComponent } from './components/create-producto/create-producto.component';
+import { ListProductoComponent } from './components/list-producto/list-producto.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +59,11 @@ import { Navbar2Component } from './components/navbar2/navbar2.component';
     RegisterUserComponent,
     AdministracionComponent,
     Navbar2Component,
+    CreateMascotaComponent,
+    ListMascotaComponent,
+    CreateProductoComponent,
+    ListProductoComponent,
+  
     
   ],
   imports: [

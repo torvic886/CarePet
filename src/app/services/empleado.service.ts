@@ -54,4 +54,50 @@ export class EmpleadoService
     return this.firestore.collection('clientes').doc(id).update(data);
   }
 
+  // Crud Mascota
+  agregarMascota(mascota: any): Promise<any>
+  {
+    return this.firestore.collection('mascotas').add(mascota);
+  }
+  getMascota(): Observable<any> 
+  {
+    return this.firestore.collection('mascotas', ref => ref.orderBy('fechaCreacion','asc')).snapshotChanges();
+  }
+
+  eliminarMascota(id: string): Promise <any> 
+  {
+    return this.firestore.collection('mascotas').doc(id).delete();
+  }
+  getMascota_(id: string): Observable<any>
+  {
+    return this.firestore.collection('mascotas').doc(id).snapshotChanges();
+  }
+  actualizarMascota(id: string, data:any): Promise<any>
+  {
+    return this.firestore.collection('mascotas').doc(id).update(data);
+  }
+
+   // Crud Producto
+  agregarProducto(producto: any): Promise<any>
+  {
+    return this.firestore.collection('productos').add(producto);
+  }
+  getProducto(): Observable<any> 
+  {
+    return this.firestore.collection('productos', ref => ref.orderBy('fechaCreacion','asc')).snapshotChanges();
+  }
+
+  eliminarProducto(id: string): Promise <any> 
+  {
+    return this.firestore.collection('productos').doc(id).delete();
+  }
+  getProducto_(id: string): Observable<any>
+  {
+    return this.firestore.collection('productos').doc(id).snapshotChanges();
+  }
+  actualizarProducto(id: string, data:any): Promise<any>
+  {
+    return this.firestore.collection('productos').doc(id).update(data);
+  }
+
 }

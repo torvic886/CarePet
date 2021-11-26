@@ -12,6 +12,10 @@ import { RegisterUserComponent } from './components/register-user/register-user.
 import { CreateClienteComponent } from './components/create-cliente/create-cliente.component';
 import { AdministracionComponent } from './components/administracion/administracion.component';
 import { ListClienteComponent } from './components/list-cliente/list-cliente.component';
+import { CreateMascotaComponent } from './components/create-mascota/create-mascota.component';
+import { ListMascotaComponent } from './components/list-mascota/list-mascota.component';
+import { ListProductoComponent } from './components/list-producto/list-producto.component';
+import { CreateProductoComponent } from './components/create-producto/create-producto.component';
 
 
 
@@ -22,8 +26,13 @@ const routes: Routes = [
   {path: 'administracion',component: AdministracionComponent},
   { path: 'list-empleado', component: ListEmpleadoComponent },
   {path: 'list-cliente', component: ListClienteComponent},
+  {path: 'list-mascota', component: ListMascotaComponent},
+  {path: 'list-producto', component: ListProductoComponent},
   { path: 'create-empleado', component: CreateEmpleadoComponent },
   { path: 'create-cliente', component: CreateClienteComponent },
+  { path: 'create-mascota', component: CreateMascotaComponent },
+  { path: 'create-mascota', component: CreateMascotaComponent },
+  { path: 'create-producto', component: CreateProductoComponent },
   { path: 'catalogo-producto', component: CatalogoProductoComponent },
   { path: 'login', component: LoginComponent },
   { path: 'login-inicio', component: LoginInicioComponent },
@@ -33,6 +42,8 @@ const routes: Routes = [
   { path: 'verificar-password', component: VerificarPasswordComponent },
   { path: 'editEmpleado/:id', component: CreateEmpleadoComponent },
   {path: 'editCliente/:id', component: CreateClienteComponent},
+  {path: 'editMascota/:id', component: CreateMascotaComponent},
+  {path: 'editProducto/:id', component: CreateProductoComponent},
   { path: '', redirectTo: 'list-empleado', pathMatch: 'full' },
   { path: '**', redirectTo: 'list-empleado', pathMatch: 'full' }
 ];
