@@ -40,6 +40,10 @@ import { CreateMascotaComponent } from './components/create-mascota/create-masco
 import { ListMascotaComponent } from './components/list-mascota/list-mascota.component';
 import { CreateProductoComponent } from './components/create-producto/create-producto.component';
 import { ListProductoComponent } from './components/list-producto/list-producto.component';
+import { CreateServicioComponent } from './components/create-servicio/create-servicio.component';
+import { ListServicioComponent } from './components/list-servicio/list-servicio.component';
+import { CreateCategoriaComponent } from './components/create-categoria/create-categoria.component';
+import { ListCategoriaComponent } from './components/list-categoria/list-categoria.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +67,10 @@ import { ListProductoComponent } from './components/list-producto/list-producto.
     ListMascotaComponent,
     CreateProductoComponent,
     ListProductoComponent,
+    CreateServicioComponent,
+    ListServicioComponent,
+    CreateCategoriaComponent,
+    ListCategoriaComponent,
   
     
   ],

@@ -100,4 +100,28 @@ export class EmpleadoService
     return this.firestore.collection('productos').doc(id).update(data);
   }
 
+   // Crud Servicio
+   agregarServicio(servicio: any): Promise<any>
+   {
+     return this.firestore.collection('servicios').add(servicio);
+   }
+   getServicio(): Observable<any> 
+   {
+     return this.firestore.collection('servicios', ref => ref.orderBy('fechaCreacion','asc')).snapshotChanges();
+   }
+ 
+   eliminarServicio(id: string): Promise <any> 
+   {
+     return this.firestore.collection('servicios').doc(id).delete();
+   }
+   getServicio_(id: string): Observable<any>
+   {
+     return this.firestore.collection('servicios').doc(id).snapshotChanges();
+   }
+   actualizarServicio(id: string, data:any): Promise<any>
+   {
+     return this.firestore.collection('servicios').doc(id).update(data);
+   }
+ 
+
 }
