@@ -42,8 +42,9 @@ import { CreateProductoComponent } from './components/create-producto/create-pro
 import { ListProductoComponent } from './components/list-producto/list-producto.component';
 import { CreateServicioComponent } from './components/create-servicio/create-servicio.component';
 import { ListServicioComponent } from './components/list-servicio/list-servicio.component';
-import { CreateCategoriaComponent } from './components/create-categoria/create-categoria.component';
 import { ListCategoriaComponent } from './components/list-categoria/list-categoria.component';
+import { CreateArticuloComponent } from './components/create-articulo/create-articulo.component';
+import { ListArticuloComponent } from './components/list-articulo/list-articulo.component';
 
 @NgModule({
   declarations: [
@@ -69,8 +70,9 @@ import { ListCategoriaComponent } from './components/list-categoria/list-categor
     ListProductoComponent,
     CreateServicioComponent,
     ListServicioComponent,
-    CreateCategoriaComponent,
     ListCategoriaComponent,
+    CreateArticuloComponent,
+    ListArticuloComponent,
   
     
   ],

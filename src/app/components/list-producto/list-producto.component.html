@@ -5,7 +5,8 @@
         <img class="img-fluid" src='./assets/Imagenes/estar.png'/>
   
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-          <button class="btn btn-dark btn-lg" routerLink='/create-producto'>Agregar</button>
+          <button type="text" class="btn btn-outline-primary btn-lg btn-space" routerLink='/administracion'>Volver</button>
+          <button class="btn btn-outline-dark btn-lg" routerLink='/create-producto'>Agregar</button>
         </div>
         <h5 style="margin-top: 30px;" *ngIf="productos.length == 0">No Hay Datos Para Mostrar</h5>
         <table *ngIf='productos.length > 0' class="table table-striped mt-5">
