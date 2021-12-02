@@ -122,6 +122,29 @@ export class EmpleadoService
    {
      return this.firestore.collection('servicios').doc(id).update(data);
    }
+
+   // Crud Articulo
+   agregarArticulo(articulo: any): Promise<any>
+   {
+     return this.firestore.collection('articulos').add(articulo);
+   }
+   getArticulo(): Observable<any> 
+   {
+     return this.firestore.collection('articulos', ref => ref.orderBy('fechaCreacion','asc')).snapshotChanges();
+   }
+ 
+   eliminarArticulo(id: string): Promise <any> 
+   {
+     return this.firestore.collection('articulos').doc(id).delete();
+   }
+   getArticulo_(id: string): Observable<any>
+   {
+     return this.firestore.collection('articulos').doc(id).snapshotChanges();
+   }
+   actualizarArticulo(id: string, data:any): Promise<any>
+   {
+     return this.firestore.collection('articulos').doc(id).update(data);
+   }
  
 
 }

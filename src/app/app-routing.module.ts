@@ -18,6 +18,8 @@ import { ListProductoComponent } from './components/list-producto/list-producto.
 import { CreateProductoComponent } from './components/create-producto/create-producto.component';
 import { CreateServicioComponent } from './components/create-servicio/create-servicio.component';
 import { ListServicioComponent } from './components/list-servicio/list-servicio.component';
+import { CreateArticuloComponent } from './components/create-articulo/create-articulo.component';
+import { ListArticuloComponent } from './components/list-articulo/list-articulo.component';
 
 
 
@@ -26,11 +28,13 @@ const routes: Routes = [
   {path: '', component: CatalogoProductoComponent },
   { path: '', redirectTo: 'catalogo-producto', pathMatch: 'full' },
   {path: 'administracion',component: AdministracionComponent},
+  { path: 'list-articulo', component: ListArticuloComponent },
   { path: 'list-empleado', component: ListEmpleadoComponent },
   {path: 'list-cliente', component: ListClienteComponent},
   {path: 'list-mascota', component: ListMascotaComponent},
   {path: 'list-producto', component: ListProductoComponent},
   {path: 'list-servicio', component: ListServicioComponent},
+  { path: 'create-articulo', component: CreateArticuloComponent },
   { path: 'create-empleado', component: CreateEmpleadoComponent },
   { path: 'create-cliente', component: CreateClienteComponent },
   { path: 'create-mascota', component: CreateMascotaComponent },
@@ -44,6 +48,7 @@ const routes: Routes = [
   { path: 'registerUser', component: RegisterUserComponent},
   { path: 'verificarCorreo', component: VerificarCorreoComponent },
   { path: 'verificar-password', component: VerificarPasswordComponent },
+  { path: 'editArticulo/:id', component: CreateArticuloComponent },
   { path: 'editEmpleado/:id', component: CreateEmpleadoComponent },
   {path: 'editCliente/:id', component: CreateClienteComponent},
   {path: 'editMascota/:id', component: CreateMascotaComponent},
